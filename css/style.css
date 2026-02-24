@@ -1,0 +1,59 @@
+/* iOS Safe Area Management */
+:root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+    background-color: #0f172a; /* Dunkles Slate-Blau */
+    color: #f1f5f9;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Button Stylings */
+.club-btn, .par-btn, .quality-btn {
+    background-color: #1e293b;
+    border: 2px solid #334155;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Aktive/Ausgewählte Zustände */
+.selected {
+    border-color: #34d399 !important; /* Smaragd-Grün */
+    background-color: #064e3b !important;
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+}
+
+/* Feedback beim Tippen für alle Buttons */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Spezielle Anpassung für den Putter-Button */
+button[data-club="PT"] {
+    color: #34d399;
+    border-color: #064e3b;
+}
+
+/* Versteckte Elemente mit sanftem Übergang (optional über JS) */
+.hidden {
+    display: none;
+}
+
+/* Animation für den Hole-Summary Banner */
+#holeSummary {
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
